@@ -3,7 +3,7 @@ describe("My First Test", ()=>{
         cy.visit("https://example.cypress.io")
 
         cy.pause()
-        
+
         cy.contains("type").click()
         
         cy.url()
@@ -12,5 +12,11 @@ describe("My First Test", ()=>{
         cy.get('.action-email')
             .type("fake@email.com")
             .should("have.value", "fake@email.com")
+
+        // A solid test generally covers 3 phases:
+
+        // Set up the application state.
+        // Take an action.
+        // Make an assertion about the resulting application state.
     })
 })
