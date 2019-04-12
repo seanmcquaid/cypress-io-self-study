@@ -1,12 +1,16 @@
 describe("My First Test", ()=>{
-    it("Visits the kitchen sink", ()=>{
-        // arrange - set up initial app state
-        // visit a page
+    it("Gets, types and asserts", ()=>{
         cy.visit("https://example.cypress.io")
-        // query to find an element
-        // act - take an action
-        // interact with that element
-        // make an assertion
-        // make an assertion about the changes in the app
+
+        cy.pause()
+        
+        cy.contains("type").click()
+        
+        cy.url()
+        .should("include", "/commands/actions")
+
+        cy.get('.action-email')
+            .type("fake@email.com")
+            .should("have.value", "fake@email.com")
     })
 })
